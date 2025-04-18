@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -13,11 +14,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 260 75% 75%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 260 30% 54%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -30,24 +31,17 @@
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --ring: 260 75% 75%;
 
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
+    --sidebar-primary: 260 75% 75%;
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -61,7 +55,7 @@
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
 
-    --primary: 210 40% 98%;
+    --primary: 260 75% 75%;
     --primary-foreground: 222.2 47.4% 11.2%;
 
     --secondary: 217.2 32.6% 17.5%;
@@ -97,5 +91,43 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+
+  h1 {
+    @apply text-3xl sm:text-4xl font-bold mb-4;
+  }
+
+  h2 {
+    @apply text-2xl sm:text-3xl font-bold mb-3;
+  }
+
+  h3 {
+    @apply text-xl sm:text-2xl font-semibold mb-2;
+  }
+}
+
+@layer components {
+  .health-card {
+    @apply bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300;
+  }
+  
+  .health-input {
+    @apply w-full rounded-md border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+  
+  .health-btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+  
+  .health-btn-primary {
+    @apply health-btn bg-primary text-white hover:bg-secondary;
+  }
+  
+  .health-btn-secondary {
+    @apply health-btn bg-health-soft-blue text-health-deep-purple hover:bg-health-bright-blue hover:text-white;
+  }
+  
+  .health-btn-outline {
+    @apply health-btn bg-transparent border border-primary text-primary hover:bg-primary hover:text-white;
   }
 }
